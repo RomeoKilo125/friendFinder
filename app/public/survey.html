@@ -9,8 +9,8 @@
 
 <body>
   <form class="form" action="index.html" method="post">
-    <label for="name" id="nameField">What is your name?</label>
-    <input type="text" />
+    <label for="nameField">What is your name?</label>
+    <input id="nameField" type="text" />
     <radiogroup id='q1'>
       <h4>How do you feel about water?</h4>
       <input type="radio" name="q1" value=1 />
@@ -68,7 +68,7 @@
       <label for="q4">If I didn't have to breathe, I wouldn't.</label>
       <br>
       <input type="radio" name="q4" value=2 />
-      <label for="q4">I don't like the way Oppa smells.</label>
+      <label for="q4">I don't like the way Appa smells.</label>
       <br>
       <input type="radio" name="q4" value=3 />
       <label for="q4">Meh</label>
@@ -131,21 +131,55 @@
       <label for="q7">KILL THEM</label>
     </radiogroup>
     <radiogroup id='q8'>
-      <h4>Someone says something mildly agressive toward you. What do you do?</h4>
+      <h4>Would you participate in an underground fighting ring?</h4>
       <input type="radio" name="q8" value=1 />
-      <label for="q8">Run away</label>
+      <label for="q8">Illegal stuff? No way.</label>
       <br>
       <input type="radio" name="q8" value=2 />
-      <label for="q8">Talk them down</label>
+      <label for="q8">ehh...not my scene</label>
       <br>
       <input type="radio" name="q8" value=3 />
-      <label for="q8">Try to see things from their perspective</label>
+      <label for="q8">I'll go watch, but wouldn't fight</label>
       <br>
       <input type="radio" name="q8" value=4 />
-      <label for="q8">Teach them a lesson</label>
+      <label for="q8">That sounds like it could be fun</label>
       <br>
       <input type="radio" name="q8" value=5 />
-      <label for="q8">KILL THEM</label>
+      <label for="q8">Just point me to my opponent</label>
+    </radiogroup>
+    <radiogroup id='q9'>
+      <h4>Finish this sentence. "It's a long long way..."</h4>
+      <input type="radio" name="q9" value=1 />
+      <label for="q9">to Ba Sing Se.</label>
+      <br>
+      <input type="radio" name="q9" value=2 />
+      <label for="q9">home</label>
+      <br>
+      <input type="radio" name="q9" value=3 />
+      <label for="q9">but I'll be there by day</label>
+      <br>
+      <input type="radio" name="q9" value=4 />
+      <label for="q9">so don't tell me there's no hay</label>
+      <br>
+      <input type="radio" name="q9" value=5 />
+      <label for="q9">ugh, why are we singing!?</label>
+    </radiogroup>
+    <radiogroup id='q10'>
+      <h4>Your worst enemy comes to you. They're saying they've had a change of heart, and they want to help you. What do you do?</h4>
+      <input type="radio" name="q10" value=1 />
+      <label for="q10">kill them</label>
+      <br>
+      <input type="radio" name="q10" value=2 />
+      <label for="q10">don't believe them, and make them go away.</label>
+      <br>
+      <input type="radio" name="q10" value=3 />
+      <label for="q10">tie them up until your friends decide they're telling the truth.</label>
+      <br>
+      <input type="radio" name="q10" value=4 />
+      <label for="q10">Tell them you believe them. Then exploit them for personal gain.</label>
+      <br>
+      <input type="radio" name="q10" value=5 />
+      <label for="q10">Forgive them and become friends.</label>
     </radiogroup>
 
     <p><button type="submit" class="submit">So who is it?</button></p>
@@ -170,22 +204,18 @@
 
     let answers = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
 
-    console.log(answers);
 
 
     let newFriend = {
-      name: $('nameField').val().trim(),
+      name: $('#nameField').val().trim(),
       scores: answers
     }
 
+    // $('#nameField').val("");
+    // $('input:checked').prop('checked',false);
 
-    $.post('/api/friends', newFriend, data => {
-      if (data) {
-        alert("Your new friend is...");
-      } else {
-        alert("something went wrong");
-      }
-
+    $.post('/api/friends', newFriend, result => {
+      console.log(result.name);
     });
   });
 </script>

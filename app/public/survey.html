@@ -77,6 +77,57 @@
       <input type="radio" name="q4" value=5 />
       <label for="q4">I love flying!</label>
     </radiogroup>
+    <radiogroup id='q5'>
+      <h4>Do you enjoy travel?</h4>
+      <input type="radio" name="q5" value=1 />
+      <label for="q5">I'm fine where I am thanks.</label>
+      <br>
+      <input type="radio" name="q5" value=2 />
+      <label for="q5">Only while I'm complaining endlessly. And there better be good food where we're going.</label>
+      <br>
+      <input type="radio" name="q5" value=3 />
+      <label for="q5">If I have to, I will.</label>
+      <br>
+      <input type="radio" name="q5" value=4 />
+      <label for="q5">I'm up for a trip.</label>
+      <br>
+      <input type="radio" name="q5" value=5 />
+      <label for="q5">I can't stay in the same place for more than a week.</label>
+    </radiogroup>
+    <radiogroup id='q6'>
+      <h4>What's the best part about being a Bender?</h4>
+      <input type="radio" name="q6" value=1 />
+      <label for="q6">Being one with nature.</label>
+      <br>
+      <input type="radio" name="q6" value=2 />
+      <label for="q6">Having a cultural identity.</label>
+      <br>
+      <input type="radio" name="q6" value=3 />
+      <label for="q6">Sharing my gift with others.</label>
+      <br>
+      <input type="radio" name="q6" value=4 />
+      <label for="q6">All the fun stuff I can do.</label>
+      <br>
+      <input type="radio" name="q6" value=5 />
+      <label for="q6">The ability to dominate others.</label>
+    </radiogroup>
+    <radiogroup id='q7'>
+      <h4>Someone says something mildly agressive toward you. What do you do?</h4>
+      <input type="radio" name="q7" value=1 />
+      <label for="q7">Run away</label>
+      <br>
+      <input type="radio" name="q7" value=2 />
+      <label for="q7">Talk them down</label>
+      <br>
+      <input type="radio" name="q7" value=3 />
+      <label for="q7">Try to see things from their perspective</label>
+      <br>
+      <input type="radio" name="q7" value=4 />
+      <label for="q7">Teach them a lesson</label>
+      <br>
+      <input type="radio" name="q7" value=5 />
+      <label for="q7">KILL THEM</label>
+    </radiogroup>
 
     <p><button type="submit" class="submit">So who is it?</button></p>
   </form>
@@ -91,8 +142,14 @@
     let q2 = parseInt($('input[name=q2]:checked').val());
     let q3 = parseInt($('input[name=q3]:checked').val());
     let q4 = parseInt($('input[name=q4]:checked').val());
+    let q5 = parseInt($('input[name=q5]:checked').val());
+    let q6 = parseInt($('input[name=q6]:checked').val());
+    let q7 = parseInt($('input[name=q7]:checked').val());
+    let q8 = parseInt($('input[name=q8]:checked').val());
+    let q9 = parseInt($('input[name=q9]:checked').val());
+    let q10 = parseInt($('input[name=q10]:checked').val());
 
-    let answers = [q1, q2, q3, q4]
+    let answers = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
 
     console.log(answers);
   });

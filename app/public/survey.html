@@ -53,8 +53,8 @@
 <script type="text/javascript">
   $('.submit').on('click', event => {
     event.preventDefault();
-    let q1 = $('input[name=q1]:checked').val();
-    let q2 = $('input[name=q2]:checked').val();
+    let q1 = parseInt($('input[name=q1]:checked').val());
+    let q2 = parseInt($('input[name=q2]:checked').val());
 
     let answers = [q1, q2]
 

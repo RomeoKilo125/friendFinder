@@ -223,8 +223,8 @@
       scores: answers
     }
 
-    // $('#nameField').val("");
-    // $('input:checked').prop('checked',false);
+    $('#nameField').val("");
+    $('input:checked').prop('checked',false);
 
     $.post('/api/friends', newFriend, result => {
       $('#matchName').text(result.name);

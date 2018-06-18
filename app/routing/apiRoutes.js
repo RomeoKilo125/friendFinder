@@ -32,7 +32,6 @@ module.exports = function(app) {
     let newFriend = req.body;
 
     let match = findMatch(newFriend)
-    console.log(match);
 
     res.json(match);
 

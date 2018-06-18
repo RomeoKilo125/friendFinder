@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Answer Some Questions</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="/css/reset.css"> -->
   <link rel="stylesheet" href="/css/master.css">
 </head>
 
@@ -12,10 +13,10 @@
 
   <div class="modal" id="resultModal">
     <div class="modal-content">
-      <span class="close">&times;</span>
+      <span class="close" id='btnClose'>&times;</span>
       <p>Your match is...</p>
-      <h3 id='matchName'></h3>
-      <img src="#" alt="match image">
+      <h2 id='matchName'></h2>
+      <img src="#" id='matchImg' alt="match image">
     </div>
   </div>
 
@@ -226,7 +227,15 @@
     // $('input:checked').prop('checked',false);
 
     $.post('/api/friends', newFriend, result => {
-      console.log(result);
+      $('#matchName').text(result.name);
+      $('#matchImg').attr('src', result.photo);
+      $('#resultModal').attr('style', 'display: block');
     });
   });
+
+  $('#btnClose').on("click", event => {
+    event.preventDefault();
+    $('#resultModal').attr('style', 'display: none');
+  });
+
 </script>

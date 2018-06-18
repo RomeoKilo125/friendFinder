@@ -4,7 +4,7 @@ const path = require('path');
 require('dotenv').config();
 
 let app = express();
-let PORT = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'app/public')));
 
